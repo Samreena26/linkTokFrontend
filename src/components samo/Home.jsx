@@ -136,13 +136,13 @@ const Home = () => {
 		<div className="home bg-gray-100 min-h-screen">
 			<div className="container mx-auto px-4 py-8">
 				<div className="flex items-center justify-between mb-4">
-					<h1 className="text-4xl font-bold text-blue-600">LinkTok</h1>
+					<h1 className="text-4xl font-bold text-orange-600">LinkTok</h1>
 					<div className="flex space-x-4">
 						{isAuthenticated ? (
 							// If the user is authenticated, show the logout button
 							<button
 								onClick={handleLogout}
-								className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+								className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 								Logout
 							</button>
 						) : (
@@ -150,13 +150,13 @@ const Home = () => {
 							<>
 								<Link
 									to="/registration"
-									className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									Register
 								</Link>
 
 								<Link
 									to="/login"
-									className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									Login
 								</Link>
 							</>
@@ -186,7 +186,7 @@ const Home = () => {
 								</p>
 								<button
 									onClick={() => handleLike(user.id, user.profile_picture_id)}
-									className="flex  bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+									className="flex  bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									<FaThumbsUp className="mt-1" />
 									<span className="material-icons ml-2 align-top">Like</span>
 								</button>

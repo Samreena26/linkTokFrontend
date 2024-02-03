@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 
 //importing image
-import image from "../images/image.png";
+import image from "../images/pic.png";
 
 // Define the Register component
 const Register = () => {
@@ -68,20 +68,13 @@ const Register = () => {
 	// Return the JSX code for the registration form
 	return (
 		<div className="register flex flex-col items-center justify-center min-h-auto bg-gray-100">
-			<div className="flex flex-wrap mt-10">
-				<div className="w-full md:w-1/2">
-					<img
-						src={image}
-						alt="Image"
-						className="object-cover w-full h-full"
-					/>
-				</div>
-
+			<div className="flex flex-wrap">
 				<form
 					onSubmit={handleSubmit}
 					className="w-96 bg-white p-8 rounded-lg shadow-lg ">
+					<h1 className="text-4xl font-bold text-orange-600 mb-8">Register</h1>
+
 					<div className="form-group mb-3">
-						<h1 className="text-4xl font-bold text-blue-600 mb-8">Register</h1>
 						<label
 							htmlFor="username"
 							className="block text-gray-700 font-medium">
@@ -94,7 +87,7 @@ const Register = () => {
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 							required
-							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
 						/>
 					</div>
 					<div className="form-group mb-3">
@@ -110,7 +103,7 @@ const Register = () => {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							required
-							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
 						/>
 					</div>
 					<div className="form-group mb-3">
@@ -126,7 +119,7 @@ const Register = () => {
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							required
-							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
 						/>
 					</div>
 					<div className="form-group mb-3">
@@ -142,7 +135,7 @@ const Register = () => {
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
 							required
-							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
 						/>
 					</div>
 					<div className="form-group mb-3">
@@ -158,7 +151,7 @@ const Register = () => {
 							accept="image/*"
 							onChange={(e) => setProfilePicture(e.target.files[0])}
 							required
-							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
 						/>
 					</div>
 					<div className="form-group mb-3">
@@ -173,25 +166,31 @@ const Register = () => {
 							name="interests"
 							value={interests}
 							onChange={(e) => setInterests(e.target.value)}
-							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+							className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
 						/>
 					</div>
 					<button
 						type="submit"
-						className="w-full bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+						className="w-full bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 						Register
 					</button>
 					<h1 className="text-base font-semibold text-black mt-8">
 						already have an account?
 						<Link
 							to="/login"
-							className="text-blue-600 hover:text-zinc-950 ">
+							className="text-orange-600 hover:text-zinc-950 ">
 							login
 						</Link>
 					</h1>
 				</form>
-
 				<ToastContainer />
+				<div className="w-full md:w-1/2">
+					<img
+						src={image}
+						alt="Image"
+						className="object-cover w-full h-full"
+					/>
+				</div>
 			</div>
 		</div>
 	);
