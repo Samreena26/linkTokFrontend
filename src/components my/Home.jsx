@@ -136,13 +136,15 @@ const Home = () => {
 		<div className="home bg-gray-100 min-h-screen">
 			<div className="container mx-auto px-4 py-8">
 				<div className="flex items-center justify-between mb-4">
-					<h1 className="text-4xl font-bold text-orange-600">LinkTok</h1>
+					<h1 className="text-4xl font-bold text-blue-600 border-4 border-blue-800 rounded-3xl p-2">
+						<Link to="/">LinkTok</Link>
+					</h1>
 					<div className="flex space-x-4">
 						{isAuthenticated ? (
 							// If the user is authenticated, show the logout button
 							<button
 								onClick={handleLogout}
-								className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+								className="bg-blue-600 text-white px-3 py-2 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
 								Logout
 							</button>
 						) : (
@@ -150,43 +152,45 @@ const Home = () => {
 							<>
 								<Link
 									to="/registration"
-									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									className="bg-blue-600  text-white px-4 py-2  hover:bg-blue-700 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600">
 									Register
 								</Link>
 
 								<Link
 									to="/login"
-									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
 									Login
 								</Link>
 							</>
 						)}
 					</div>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3  ">
 					{users.map((user) => (
 						<div
 							key={user.id}
 							className="border border-slate-100 rounded-lg overflow-hidden">
 							<img
 								src={user.image_link}
-								className="object-cover w-full h-96 mb-4"
+								className="object-cover w-full h-64 mb-1 rounded-md"
 								alt={user.username}
 							/>
 							<div className="p-4">
-								<p className="mb-4 text-2xl font-bold text-gray-800">
+								<p className="mb-1 text-lg text-gray-500">{user.email}</p>
+								<p className="mb-1 text-2xl font-bold text-gray-800">
 									{user.username}
 								</p>
-								<p className="mb-4 text-lg text-gray-500">{user.email}</p>
-								<p className="mb-4 text-lg text-gray-500">
-									interests: {user.interests}
-								</p>
-								<p className="mb-4 text-lg text-gray-500">
+
+								<p className="mb-1 text-lg text-gray-500">
 									Total likes: {user.total_likes}
 								</p>
+								<p className="mb-1 text-lg text-gray-500">
+									interests: {user.interests}
+								</p>
+
 								<button
 									onClick={() => handleLike(user.id, user.profile_picture_id)}
-									className="flex  bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									className="flex  bg-sky-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
 									<FaThumbsUp className="mt-1" />
 									<span className="material-icons ml-2 align-top">Like</span>
 								</button>

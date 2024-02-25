@@ -1,5 +1,5 @@
 // Import React, useState, useEffect, and axios
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 // Import navigation for redirecting the user to other pages
@@ -131,62 +131,75 @@ const Home = () => {
 		}, 3000);
 	};
 
+	const handleReset = () => {
+		setTimeout(() => {
+			navigate("/reset");
+		}, 3000);
+	};
 	// Return the JSX code for the home page
 	return (
-		<div className="home bg-gray-100 min-h-screen">
+		<div className=" bg-slate-800 min-h-screen">
 			<div className="container mx-auto px-4 py-8">
 				<div className="flex items-center justify-between mb-4">
-					<h1 className="text-4xl font-bold text-blue-600">LinkTok</h1>
+					<h1 className="text-4xl font-bold text-orange-600">LinkTok</h1>
 					<div className="flex space-x-4">
 						{isAuthenticated ? (
 							// If the user is authenticated, show the logout button
-							<button
-								onClick={handleLogout}
-								className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
-								Logout
-							</button>
+							<div>
+								<button
+									onClick={handleReset}
+									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 mr-3 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									reset password
+								</button>
+
+								<button
+									onClick={handleLogout}
+									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									Logout
+								</button>
+							</div>
 						) : (
 							// If the user is not authenticated, show the register and login buttons
 							<>
 								<Link
 									to="/registration"
-									className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									Register
 								</Link>
 
 								<Link
 									to="/login"
-									className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									Login
 								</Link>
 							</>
 						)}
 					</div>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
 					{users.map((user) => (
 						<div
 							key={user.id}
-							className="border border-slate-100 rounded-lg overflow-hidden">
+							className="border text-white border-slate-100 rounded-lg overflow-hidden">
 							<img
 								src={user.image_link}
-								className="object-cover w-full h-96 mb-4"
+								className="object-cover  w-full h-96 mb-4"
 								alt={user.username}
 							/>
 							<div className="p-4">
-								<p className="mb-4 text-2xl font-bold text-gray-800">
+								<p className="mb-4 text-2xl text-white font-bold ">
 									{user.username}
 								</p>
-								<p className="mb-4 text-lg text-gray-500">{user.email}</p>
-								<p className="mb-4 text-lg text-gray-500">
+								<p className="mb-4 text-lgtext-white">{user.email}</p>
+								<p className="mb-4 text-lg text-white">
 									interests: {user.interests}
 								</p>
-								<p className="mb-4 text-lg text-gray-500">
+								<p className="mb-4 text-lgtext-white">
 									Total likes: {user.total_likes}
 								</p>
 								<button
 									onClick={() => handleLike(user.id, user.profile_picture_id)}
-									className="flex  bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+									className="flex  bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									<FaThumbsUp className="mt-1" />
 									<span className="material-icons ml-2 align-top">Like</span>
 								</button>
