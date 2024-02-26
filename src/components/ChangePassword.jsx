@@ -55,7 +55,7 @@ const ChangePassword = () => {
 			);
 			toast.success(response.data.message);
 			setTimeout(() => {
-				navigate("/home"); // Redirect to the home page after 2 seconds
+				navigate("/"); // Redirect to the home page after 2 seconds
 			}, 2000);
 			// Reset form fields or redirect to another page
 			setFormData({
