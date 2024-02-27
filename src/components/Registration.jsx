@@ -72,7 +72,7 @@ const Register = () => {
 				<form
 					onSubmit={handleSubmit}
 					className="w-96 bg-white p-8 rounded-lg shadow-lg ">
-					<h1 className="text-4xl font-bold text-orange-600 mb-8">Register</h1>
+					<h1 className="text-4xl font-bold text-pink-600 mb-8">Register</h1>
 
 					<div className="form-group mb-3">
 						<label
@@ -171,15 +171,15 @@ const Register = () => {
 					</div>
 					<button
 						type="submit"
-						className="w-full bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+						className="w-full bg-pink-600 font-semibold text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 						Register
 					</button>
 					<h1 className="text-base font-semibold text-black mt-8">
-						already have an account?
+						Already have an account?
 						<Link
 							to="/login"
-							className="text-orange-600 hover:text-zinc-950 ">
-							login
+							className="font-semibold text-blue-600 hover:text-pink-800 ">
+							&nbsp; Login
 						</Link>
 					</h1>
 				</form>

@@ -123,9 +123,9 @@ const Home = () => {
 		setIsAuthenticated(false);
 
 		// Show a success message in the toast
-		toast.success("You have logged out successfully");
+		toast.success("Log out successfully");
 
-		// Redirect the user to the login page after 3 seconds
+		// Redirect user to login page after 3 seconds
 		setTimeout(() => {
 			navigate("/login");
 		}, 3000);
@@ -138,38 +138,38 @@ const Home = () => {
 	};
 	// Return the JSX code for the home page
 	return (
-		<div className=" bg-slate-800 min-h-screen">
+		<div className=" bg-gray-800 min-h-screen">
 			<div className="container mx-auto px-4 py-8">
 				<div className="flex items-center justify-between mb-4">
-					<h1 className="text-4xl font-bold text-orange-600">LinkTok</h1>
+					<h1 className="text-4xl font-bold text-pink-600">LinkTok</h1>
 					<div className="flex space-x-4">
 						{isAuthenticated ? (
-							// If the user is authenticated, show the logout button
+							// If the user is authenticated, Display logout interface
 							<div>
 								<button
 									onClick={handleReset}
-									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 mr-3 focus:outline-none focus:ring-2 focus:ring-orange-600">
-									reset password
+									className="bg-pink-600 font-semibold text-white px-3 py-2 rounded-lg hover:bg-orange-700 mr-3 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									Reset password
 								</button>
 
 								<button
 									onClick={handleLogout}
-									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									className="bg-pink-600 font-semibold text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									Logout
 								</button>
 							</div>
 						) : (
-							// If the user is not authenticated, show the register and login buttons
+							// If the user is not authenticated, Display register & login interface
 							<>
 								<Link
 									to="/registration"
-									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									className="bg-pink-600 font-semibold text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									Register
 								</Link>
 
 								<Link
 									to="/login"
-									className="bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									className="bg-pink-600 font-semibold text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									Login
 								</Link>
 							</>
@@ -199,7 +199,7 @@ const Home = () => {
 								</p>
 								<button
 									onClick={() => handleLike(user.id, user.profile_picture_id)}
-									className="flex  bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+									className="flex  bg-pink-600 font-semibold text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 									<FaThumbsUp className="mt-1" />
 									<span className="material-icons ml-2 align-top">Like</span>
 								</button>

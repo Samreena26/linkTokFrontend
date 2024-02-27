@@ -62,7 +62,7 @@ const Login = () => {
 				<form
 					onSubmit={handleSubmit}
 					className="w-96 bg-white p-8 rounded-lg shadow-lg">
-					<h1 className="text-4xl font-bold text-orange-600 mb-8">Login</h1>
+					<h1 className="text-4xl font-bold text-pink-600 mb-8">Login</h1>
 					<div className="form-group mb-3">
 						<label
 							htmlFor="email"
@@ -97,14 +97,14 @@ const Login = () => {
 					</div>
 					<button
 						type="submit"
-						className="w-full bg-orange-600 text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+						className="w-full bg-pink-600 font-semibold text-white px-3 py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
 						Login
 					</button>
-					<h1 className="text-base font-semibold text-black mt-8">
-						don't have an account?{" "}
+					<h1 className="text-base font-semibold text-gray-700 mt-8">
+						Don't have an account?{" "}
 						<Link
 							to="/registration"
-							className="text-orange-600 hover:text-zinc-950 ">
+							className="font-semibold text-blue-600 hover:text-pink-800 ">
 							Register
 						</Link>
 					</h1>

@@ -73,7 +73,7 @@ const ChangePassword = () => {
 		// Use a flex container with column direction and center alignment
 		<div className="password-reset-form flex flex-col  items-center">
 			{/* // Use a large heading with a orange color and a margin */}
-			<h2 className="text-4xl text-orange-600 m-4">Password Reset</h2>
+			<h2 className="text-4xl font-semibold text-pink-600 m-4">Password Reset</h2>
 			{/* // Use a form element with a max width, a margin, and a text center alignment */}
 			<form
 				onSubmit={handleSubmit}
@@ -140,16 +140,16 @@ const ChangePassword = () => {
 					{/* // Use a button element with a orange background, a white text, a padding, a rounded corner, a shadow, and a hover effect */}
 					<button
 						type="submit"
-						className="bg-orange-600 text-white p-2 rounded-lg shadow-md hover:bg-orange-700 mt-5">
+						className="bg-pink-600 font-semibold text-white p-2 rounded-lg shadow-md hover:bg-orange-700 mt-5">
 						Reset Password
 					</button>
 				</div>
 			</form>
 			<h1 className="text-lg">
-				back to home{" "}
+				Back to home{" "}
 				<Link
 					to="/"
-					className="text-orange-600">
+					className="font-semibold text-blue-600 hover:text-pink-800">
 					Home
 				</Link>
 			</h1>
